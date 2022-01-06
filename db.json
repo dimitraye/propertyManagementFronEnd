@@ -1,0 +1,14 @@
+{
+    "properties" : [
+        {
+            "id" : 1,
+            "city" : "Paris",
+            "price" : 48550000.0,
+            "notaryFees" : 4000.0,
+            "surface" : 1200.7,
+            "renovation" : 0.0,
+            "rent" : 4000.0,
+            "description" : "Château"
+        }
+    ]
+}

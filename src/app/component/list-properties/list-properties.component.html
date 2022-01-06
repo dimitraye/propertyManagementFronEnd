@@ -1,1 +1,31 @@
-<p>list-properties works!</p>
+<h2>Liste des Biens</h2>
+<table class="table table-bordered table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>Id</th>
+      <th>Ville</th>
+      <th>Prix</th>
+      <th>Frais de notaire</th>
+      <th>Surface</th>
+      <th>Prix des Travaux</th>
+      <th>Loyer estimé</th>
+      <th>Description</th>
+      <th>Modifier</th>
+      <th>Supprimer</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let property of properties">
+    <tr>
+      <td>{{property.id}}</td>
+      <td>{{property.city}}</td>
+      <td>{{property.price}}</td>
+      <td>{{property.notaryFees}}</td>
+      <td>{{property.surface}}</td>
+      <td>{{property.renovation}}</td>
+      <td>{{property.rent}}</td>
+      <td>{{property.description}}</td>
+      <td><button class="btn btn-success">Modifier</button></td>
+      <td><button class="btn btn-danger">Supprimer</button></td>
+    </tr>
+  </tbody>
+</table>
