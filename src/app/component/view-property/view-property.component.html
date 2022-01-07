@@ -1,1 +1,21 @@
 <p>view-property works!</p>
+<div class="card" style="width: 18rem;" *ngIf="property">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text"></p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{property.city}}</li>
+      <li class="list-group-item">{{property.price}}</li>
+      <li class="list-group-item">{{property.notaryFees}}</li>
+      <li class="list-group-item">{{property.surface}}</li>
+      <li class="list-group-item">{{property.renovation}}</li>
+      <li class="list-group-item">{{property.rent}}</li>
+      <li class="list-group-item">{{property.description}}</li>
+      <li class="list-group-item"><button class="btn btn-success" >Modifier</button></li>
+
+      <li class="list-group-item"><button class="btn btn-danger" >Supprimer</button></li>
+      
+      <li class="list-group-item"><button class="btn btn-secondary" routerLink="/products">Revenir à la liste</button></li>
+    </ul>
+    </div>
