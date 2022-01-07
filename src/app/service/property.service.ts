@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Property } from '../model/property.model';
@@ -8,7 +8,7 @@ import { Property } from '../model/property.model';
 })
 export class PropertyService {
 
-  url: string = "http://localhost:4200/properties" 
+  url: string = "http://localhost:3000/properties";
 
   httpOptions = {
     headers: new HttpHeaders({

@@ -9,6 +9,39 @@
             "renovation" : 0.0,
             "rent" : 4000.0,
             "description" : "Château"
+        },
+
+        {
+            "id" : 2,
+            "city" : "Poitiers",
+            "price" : 275000.0,
+            "notaryFees" : 900.0,
+            "surface" : 150.0,
+            "renovation" : 20000.0,
+            "rent" : 400.0,
+            "description" : "Maison"
+        },
+
+        {
+            "id" : 3,
+            "city" : "Bordeaux",
+            "price" : 750000.0,
+            "notaryFees" : 450.0,
+            "surface" : 450.7,
+            "renovation" : 10000.0,
+            "rent" : 350.0,
+            "description" : "Maison"
+        },
+
+        {
+            "id" : 4,
+            "city" : "Montréal",
+            "price" : 499000.0,
+            "notaryFees" : 1700.0,
+            "surface" : 120.7,
+            "renovation" : 5000.0,
+            "rent" : 400.0,
+            "description" : "Appartement"
         }
     ]
 }

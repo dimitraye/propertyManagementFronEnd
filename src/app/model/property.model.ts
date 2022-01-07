@@ -9,5 +9,5 @@ export class Property {
     renovation! : number;
     rent! : number
     description! : string;
-
+    constructor() {}
 }
