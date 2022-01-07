@@ -8,6 +8,7 @@ import { ListPropertiesComponent } from './component/list-properties/list-proper
 import { ViewPropertyComponent } from './component/view-property/view-property.component';
 import { CreatePropertyComponent } from './component/create-property/create-property.component';
 import { UpdatePropertyComponent } from './component/update-property/update-property.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { UpdatePropertyComponent } from './component/update-property/update-prop
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

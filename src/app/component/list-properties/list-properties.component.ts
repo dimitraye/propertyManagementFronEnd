@@ -9,7 +9,9 @@ import { PropertyService } from 'src/app/service/property.service';
 })
 export class ListPropertiesComponent implements OnInit {
 
-  constructor(private propertyService : PropertyService) { }
+  constructor(
+    private propertyService : PropertyService
+  ) { }
 
   properties! : Property[];
 
@@ -19,7 +21,7 @@ export class ListPropertiesComponent implements OnInit {
         console.log('liste des biens' , data);
         this.properties = data;
       }
-    )
+    );
   }
 
 }
