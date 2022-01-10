@@ -6,8 +6,9 @@ import { ViewPropertyComponent } from './component/view-property/view-property.c
 
 const routes: Routes = [
   { path : 'properties' , component : ListPropertiesComponent},
-  { path : 'properties/:id' , component : ViewPropertyComponent},
-  { path : 'properties/add' , component : CreatePropertyComponent}
+  { path : 'properties/add' , component : CreatePropertyComponent},
+  { path : 'properties/:id' , component : ViewPropertyComponent}
+  
 ];
 
 @NgModule({
