@@ -29,4 +29,6 @@ export class PropertyService {
   getOne( id : number) : Observable<Property> {
     return this.http.get<Property>(this.url + '/' + id);
   }
+
+  //getTotalCost()
 }
