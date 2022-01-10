@@ -9,6 +9,9 @@ import { Property } from '../model/property.model';
 export class PropertyService {
 
   url: string = "http://localhost:3000/properties";
+  totalCost! : number;
+  priceBySquare! : number;
+  rent! : number;
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -30,5 +33,18 @@ export class PropertyService {
     return this.http.get<Property>(this.url + '/' + id);
   }
 
-  //getTotalCost()
+  getTotalCost(price : number, notaryFees : number, renovation : number)  {
+    //Prix du bien + frais de notaire + coût des travaux
+    return this.totalCost = price + notaryFees + renovation;
+  }
+
+  getPriceBySquare() {
+    //Coût total / surface
+
+  }
+
+  getRent() {
+    //Rent * 12 / coût total * 100
+
+  }
 }
