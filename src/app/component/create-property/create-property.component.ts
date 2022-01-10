@@ -9,7 +9,7 @@ import { Property } from 'src/app/model/property.model';
 export class CreatePropertyComponent implements OnInit {
 
   property! : Property;
-  
+  totalcost! : number;
   constructor() { }
 
   ngOnInit(): void {
@@ -17,7 +17,10 @@ export class CreatePropertyComponent implements OnInit {
   }
 
   onCalculate(){
-    console.log(this.property);
+  }
+
+  totalCost(){
+    //Appelle la fonction qui calcule le prix total
     
   }
 
