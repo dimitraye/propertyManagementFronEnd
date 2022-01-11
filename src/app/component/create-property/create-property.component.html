@@ -27,14 +27,26 @@
   <div class="mb-3">
       <label for="dsc">Description : </label>
       <input [(ngModel)]="property.description" type="description" class="form-control" id="dsc" placeholder="Entez une description" name="description">
-    </div>
+  </div>
 
-  <button type="submit" class="btn btn-primary" (click)="onCalculate()">Calculer</button>
+  <div class="mb-3" [hidden] = "isShow">
+    <label for="">Prix Total du bien :</label>
+    <input type="totCost" placeholder="TotalCost">
+  </div>
+  <div class="mb-3" [hidden] = "isShow">
+    <label for="">Prix au m² :</label>
+    <input type="totCost" placeholder="square">
+  </div>
+  <div class="mb-3" [hidden] = "isShow">
+    <label for="">Rentabilité :</label>
+    <input type="totCost" placeholder="rent">
+  </div>
+
+  <button type="submit" class="btn btn-primary" (click)=toggleDisplay()>Calculer</button>
   &nbsp;
   <button class="btn btn-secondary" routerLink="/products">Revenir à la liste</button>
 
   <!-- Si on appuie sur le bouton calculer, afficher le cout total-->
-  <div class="mb-3" >
-    <label for="totCost">Coût Total : </label>
-    <input  type="totCost" class="form-control" id="totCost" placeholder=totalCost() name="totCost">
-  </div>
+  
+
+  
