@@ -9,7 +9,6 @@ import { Property } from '../model/property.model';
 export class PropertyService {
 
   url: string = "http://localhost:3000/properties";
-  totalCost! : number;
   priceBySquare! : number;
   rent! : number;
 
@@ -33,18 +32,20 @@ export class PropertyService {
     return this.http.get<Property>(this.url + '/' + id);
   }
 
-  getTotalCost(price : number, notaryFees : number, renovation : number)  {
+  getTotalCost(property : Property) : number {
     //Prix du bien + frais de notaire + coût des travaux
-    return this.totalCost = price + notaryFees + renovation;
+    return Number(property.price) + Number(property.notaryFees) + Number(property.renovation);
   }
 
-  getPriceBySquare() {
+  getPriceBySquare(property : Property) : number{
     //Coût total / surface
+    //console.log("total cost :" , totalCost);
+    return Number(this.getTotalCost(property))/Number(property.surface);
 
   }
 
-  getRent() {
+  getRent(property : Property) : number {
     //Rent * 12 / coût total * 100
-
+    return ((Number(property.rent)*12) / Number(this.getTotalCost(property))) * 100;
   }
 }
