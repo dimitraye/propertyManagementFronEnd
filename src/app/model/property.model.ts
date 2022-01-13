@@ -3,7 +3,7 @@ import { NumberValueAccessor } from "@angular/forms";
 export class Property {
     id! : number;
     city! : string;
-    price! : NumberValueAccessor;
+    price! : number;
     notaryFees! : number;
     surface! : number;
     renovation! : number;
