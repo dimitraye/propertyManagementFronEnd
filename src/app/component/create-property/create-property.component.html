@@ -1,52 +1,137 @@
-<h2>Ajouter un bien</h2>
-<form action="/action_page.php">
-  <div class="mb-3 mt-3">
-    <label for="city">Ville : </label>
-    <input [(ngModel)]="property.city" type="city" class="form-control" id="city" placeholder="Entez une ville" name="city">
-  </div>
-  <div class="mb-3 mt-3">
-    <label for="price">Prix : </label>
-    <input [(ngModel)]="property.price" type="price" class="form-control" id="price" placeholder="Entez un prix" name="price">
-  </div>
-  <div class="mb-3 mt-3">
-    <label for="notaryFees">Frais de notaire : </label>
-    <input [(ngModel)]="property.notaryFees" type="notaryFees" class="form-control" id="notaryFees" placeholder="Entez les frais de notaire" name="notaryFees">
-  </div>
-  <div class="mb-3 mt-3">
-    <label for="surface">Surface : </label>
-    <input [(ngModel)]="property.surface" type="surface" class="form-control" id="surface" placeholder="Entez une surface" name="surface">
-  </div>
-  <div class="mb-3 mt-3">
-    <label for="renovation">Coût des travaux : </label>
-    <input [(ngModel)]="property.renovation" type="renovation" class="form-control" id="renovation" placeholder="Entez le coût des travaux" name="renovation">
-  </div>
-  <div class="mb-3">
-    <label for="rent">Prix du loyer : </label>
-    <input [(ngModel)]="property.rent" type="rent" class="form-control" id="rent" placeholder="Entez le pprix du loyer" name="rent">
-  </div>
-  <div class="mb-3">
-      <label for="dsc">Description : </label>
-      <input [(ngModel)]="property.description" type="description" class="form-control" id="dsc" placeholder="Entez une description" name="description">
-  </div>
----------------------------------------------------
-  <div class="mb-3" [hidden] = "isShow">
-    <label for="">Prix Total du bien :</label>
-    <input type="totCost" [value]="totalCost(property)" readonly>
-  </div>
-  <div class="mb-3" [hidden] = "isShow">
-    <label for="">Prix au m² :</label>
-    <input type="totCost" [value]="priceBySquare(property)" readonly>
-  </div>
-  <div class="mb-3" [hidden] = "isShow">
-    <label for="">Rentabilité :</label>
-    <input type="totCost" [value]="rent(property)" readonly>
-  </div>
+<!DOCTYPE html>
+<html>
+    <body> 
+        <div class="container overflow-hidden">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row gy-5"> 
+                <div class="col-md-5"></div>
+                <div class="col-md-6"><h3>Analyser un bien</h3></div>
+              </div>
+              <form action="/action_page.php">
 
-  <button type="submit" class="btn btn-primary" (click)="toggleDisplay()" >Calculer</button>
-  &nbsp;
-  <button class="btn btn-secondary" routerLink="/products">Revenir à la liste</button>
+                <div class = "container">
+                  <div class="row gy-5">
 
-  <!-- Si on appuie sur le bouton calculer, afficher le cout total-->
-  
+                    <div class="col-md-3"></div>
 
-  
+                    <div class="col-md-6">
+                      <div class="card rounded" style="background-color: lightgray;">
+
+                        <div class="card-body">
+                          <form action="/action_page.php">
+                            
+                            <div class="container">
+                              <div class = "row gy-5">
+                                
+                                <div class="col-md-4 rounded">
+                                  <!--Ville-->
+                                  <label for="city">Ville : </label>
+                                  <input [(ngModel)]="property.city" type="city" class="form-control" id="city" placeholder="Entez une ville" name="city">
+                                </div>
+                              </div>
+
+                            
+                              <div class = "row gy-5">
+                                <div class="col-md-5 rounded">
+                                  <!--Prix-->
+                                  <label for="price">Prix : </label>
+                                  <input [(ngModel)]="property.price" type="price" class="form-control" id="price" placeholder="Entez un prix" name="price">
+                                </div>
+                
+                                <div class = "col-md-1"> </div>
+                
+                                <div class="col-md-6" [hidden] =  "isShow">
+                                <!--Prix Total-->
+                                  <label for="">Prix Total du bien :</label>
+                                  <input type="totCost" [value]="totalCost(property)" readonly>
+                                </div>
+                              </div>
+
+                              
+                              <div class = "row gy-5">
+                                <div class="col-md-5 rounded">
+                                  <!--Frais de Notaire-->
+                                  <label for="notaryFees">Frais de notaire : </label>
+                                  <input [(ngModel)]="property.notaryFees" type="notaryFees" class="form-control" id="notaryFees" placeholder="Entez les frais de notaire" name="notaryFees">
+                                </div>
+                              </div>
+                              
+                              <div class = "row gy-5">
+                                <div class="col-md-5 rounded">
+                                  <!--Coût des Travaux-->
+                                  <label for="renovation">Coût des travaux : </label>
+                                  <input [(ngModel)]="property.renovation" type="renovation" class="form-control" id="renovation" placeholder="Entez le coût des travaux" name="renovation">
+                                </div>
+                              </div>
+
+                              <div class = "row gy-5">
+                                <div class="col-md-4 rounded">
+                                  <!--Surface-->
+                                  <label for="surface">Surface : </label>
+                                  <input [(ngModel)]="property.surface" type="surface" class="form-control" id="surface" placeholder="Entez une surface" name="surface">
+                                </div>
+                
+                                <div class = "col-md-1"> </div>
+                
+                                <div class="col-md-4" [hidden] = "isShow">
+                                  <!--Prix au m²-->
+                                  <label for="m">Prix au m² :</label>
+                                  <input type="totCost" [value]="priceBySquare(property)" readonly>
+                                </div>
+                              </div>
+
+                              <div class = "row gy-5">
+                
+                                <div class="col-md-5 rounded">
+                                  <!--Loyer-->
+                                  <label for="rent">Prix du loyer : </label>
+                                  <input [(ngModel)]="property.rent" type="rent" class="form-control" id="rent" placeholder="Entez le pprix du loyer" name="rent">
+                                </div>
+                
+                                <div class = "col-md-1"> </div>
+                
+                                <div class="col-md-3" [hidden] = "isShow">
+                                  <!--Rentabilité-->
+                                  <label for="">Rentabilité :</label>
+                                  <input type="totCost" [value]="rent(property)" readonly>
+                                </div>
+                              </div>
+
+                              <div class = "row gy-5">
+                                <div class="col-md-8 rounded">
+                                  <label for="dsc">Description : </label>
+                                  <input [(ngModel)]="property.description" type="description" class="form-control" id="dsc" placeholder="Entez une description" name="description">
+                                </div>
+                              </div>
+
+                              <div class="row gy-5">
+                                <div class="col-md-4"></div>
+                                <div class="col-md-6 rounded">
+                                  <button type="submit" class="btn-01 btn btn-warning" (click)="toggleDisplay()" >Analyser</button>
+                                
+                                  <button type="submit" class="btn-02 btn btn-primary" (click)="toggleDisplay()" >Enregistrer</button>
+                                </div>
+                              </div>
+
+                            </div>
+
+                          </form>
+                        </div>
+
+                      </div>
+
+                    </div>
+                    <div class="col-md-3"></div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+    </body>
+</html>     
+    
+
+    
